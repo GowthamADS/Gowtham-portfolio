@@ -1,0 +1,255 @@
+import { motion, useInView } from "motion/react";
+import { useRef, useState } from "react";
+import { ExternalLink, Code } from "lucide-react";
+
+interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  gradient: string;
+  borderColor: string;
+  status: string;
+  buttonText: string;
+  link?: string;
+}
+
+export default function Projects() {
+  const ref = useRef(null);
+
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.2,
+  });
+
+  const projects = [
+    {
+      title: "Smart Helmet",
+      description:
+        "An intelligent helmet designed for road safety with alcohol detection, overspeed detection, GPS tracking, and emergency alerts.",
+
+      tags: ["IoT", "Sensors", "GPS", "Safety"],
+
+      gradient: "from-cyan-500/20 to-blue-500/20",
+
+      borderColor: "border-cyan-400/30",
+
+      status: "In Progress",
+
+      buttonText: "In Progress",
+
+      //link: "https://github.com/yourusername/smart-helmet",
+    },
+
+    {
+      title: "Autonomous Drone for Disaster Rescue",
+
+      description:
+        "Development of an autonomous drone with thermal imaging and advanced segmentation techniques for detecting humans during natural disasters.",
+
+      tags: ["Computer Vision", "Thermal Imaging", "AI", "Rescue"],
+
+      gradient: "from-blue-500/20 to-purple-500/20",
+
+      borderColor: "border-blue-400/30",
+
+      status: "In Progress",
+
+      buttonText: "In Progress",
+
+     // link: "https://yourdroneproject.com",
+    },
+
+    {
+      title: "Plant Disease Detection using CNN",
+
+      description:
+        "A deep learning model that detects plant diseases from leaf images using convolutional neural networks.",
+
+      tags: ["Python", "TensorFlow", "CNN", "OpenCV"],
+
+      gradient: "from-purple-500/20 to-pink-500/20",
+
+      borderColor: "border-purple-400/30",
+
+      status: "In Progress",
+
+      buttonText: "In Progress",
+
+      // link: "https://drive.google.com/yourpaper",
+    },
+
+    {
+      title: "Phishing URL Detector",
+
+      description:
+        "A machine learning model that detects phishing URLs based on their characteristics and behavior.",
+
+      tags: ["Machine Learning", "Python", "Web Security"],
+
+      gradient: "from-pink-500/20 to-red-500/20",
+
+      borderColor: "border-pink-400/30",
+
+      status: "Completed",
+
+      buttonText: "View Project",
+
+      link: "https://urldetector1.netlify.app/",
+    },
+  ];
+
+  return (
+    <section
+      id="projects"
+      className="py-20 px-4 relative overflow-hidden"
+    >
+      {/* Background Glow */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-900/10 to-transparent" />
+
+      <div
+        ref={ref}
+        className="max-w-6xl mx-auto relative z-10"
+      >
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            Featured Projects
+          </h2>
+
+          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
+        </motion.div>
+
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+              }}
+              className={`backdrop-blur-lg bg-gradient-to-br ${project.gradient} border ${project.borderColor} rounded-2xl p-8 hover:scale-105 hover:shadow-2xl transition-all duration-300 group`}
+            >
+              {/* Top Section */}
+              <div className="flex items-start justify-between mb-4">
+                <div className="p-3 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors">
+                  <Code className="w-6 h-6 text-cyan-400" />
+                </div>
+
+                <span
+                  className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    project.status === "Completed"
+                      ? "bg-green-400/20 text-green-400"
+                      : "bg-yellow-400/20 text-yellow-400"
+                  }`}
+                >
+                  {project.status}
+                </span>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                {project.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                {project.description}
+              </p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-sm text-cyan-400"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Hover Button */}
+              <div className="flex gap-4">
+                <button
+                  onClick={() => setSelectedProject(project)}
+                  className="flex items-center gap-2 text-cyan-400 transition-all duration-300 hover:scale-110 active:scale-95 group/button"
+                >
+                  <ExternalLink className="w-4 h-4 group-hover/button:animate-bounce" />
+
+                  <span className="text-sm font-semibold relative">
+                    {project.buttonText}
+
+                    {/* Underline Animation */}
+                    <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-cyan-400 transition-all duration-500 group-hover:w-full animate-pulse"></span>
+                  </span>
+
+                  {/* Arrow Effect */}
+                  <i className="fa-solid fa-angle-left opacity-0 group-hover/button:opacity-100 text-cyan-300 animate-pulse transition duration-300"></i>
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Popup Modal */}
+      {selectedProject && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50"
+        >
+          <motion.div
+            initial={{ scale: 0.7, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="bg-[#0f172a] border border-cyan-400/30 rounded-2xl p-8 w-[90%] max-w-md text-center shadow-2xl"
+          >
+            {/* Popup Title */}
+            <h2 className="text-2xl font-bold text-cyan-400 mb-4">
+              {selectedProject.title}
+            </h2>
+
+            {/* Popup Message */}
+            <p className="text-gray-300 mb-6">
+              Ready to open{" "}
+              <span className="text-cyan-400 font-semibold">
+                {selectedProject.buttonText}
+              </span>
+              ?
+            </p>
+
+            {/* Popup Buttons */}
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="px-4 py-2 rounded-lg bg-white/10 text-white hover:bg-white/20 transition"
+              >
+                Cancel
+              </button>
+
+              <a
+                href={selectedProject.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-lg bg-cyan-400 text-black font-semibold hover:bg-cyan-300 transition"
+              >
+                Open
+              </a>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </section>
+  );
+}
