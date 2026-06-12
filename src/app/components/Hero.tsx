@@ -91,7 +91,7 @@ export default function Hero() {
 }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
+    <section className="min-h-screen pt-24 lg:pt-0 flex items-center justify-center relative overflow-hidden px-4">
 
       {/* Neural Network Canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
@@ -127,12 +127,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-blue-950/40 to-blue-950/70 z-0"/>
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
+      <div className="relative z-10 max-w-7xl mx-auto w-full py-10 lg:py-0">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* LEFT SIDE */}
-          <div className="text-left">
+          <div className="text-center lg:text-left">
 
             <motion.p
               className="pt-sans text-cyan-400 text-xl mb-4"
@@ -168,7 +168,17 @@ export default function Hero() {
             />
 
             <motion.p
-              className="pt-sans text-gray-300 text-lg leading-relaxed max-w-xl mb-8"
+              className="
+              pt-sans
+              text-gray-300
+              text-base
+              sm:text-lg
+              leading-relaxed
+              max-w-xl
+              mb-8
+              mx-auto
+              lg:mx-0
+              "
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
@@ -176,7 +186,7 @@ export default function Hero() {
               and modern web applications.
             </motion.p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4">
 
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -208,7 +218,7 @@ export default function Hero() {
 
             {/* SOCIAL ICONS */}
 
-            <div className="flex gap-4 mt-10">
+            <div className="flex justify-center lg:justify-start gap-4 mt-10">
 
               <a
                 href="https://github.com/GowthamADS"
@@ -252,7 +262,21 @@ export default function Hero() {
 
             {/* Rotating Ring */}
             <motion.div
-              className="absolute w-[470px] h-[460px] rounded-full border-2 border-cyan-400 shadow-[0_0_40px_rgba(34,211,238,0.5)]"
+              className="
+              absolute
+              w-[280px]
+              h-[280px]
+              sm:w-[360px]
+              sm:h-[360px]
+              md:w-[420px]
+              md:h-[420px]
+              lg:w-[470px]
+              lg:h-[460px]
+              rounded-full
+              border-2
+              border-cyan-400
+              shadow-[0_0_40px_rgba(34,211,238,0.5)]
+              "
               animate={{ rotate: 360 }}
               transition={{
                 duration: 20,
@@ -282,11 +306,14 @@ export default function Hero() {
                 src="/1.png"
                 alt="Gowtham"
                 className="
-                  w-[510px]
-                  transition-all
-                  duration-500
-                  group-hover:scale-105
-                  group-hover:drop-shadow-[0_0_80px_rgba(34,211,238,0.7)]
+                w-[300px]
+                sm:w-[380px]
+                md:w-[450px]
+                lg:w-[510px]
+                transition-all
+                duration-500
+                group-hover:scale-105
+                group-hover:drop-shadow-[0_0_80px_rgba(34,211,238,0.7)]
                 "
               />
 
