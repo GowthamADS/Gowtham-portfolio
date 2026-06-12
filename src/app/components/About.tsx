@@ -24,9 +24,9 @@ export default function About() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 mt-5"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="federo text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
             About Me
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
@@ -40,7 +40,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
-            <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
+            <div className="pt-sans backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
               <p className="text-gray-300 leading-relaxed text-lg">
                 Highly motivated Artificial Intelligence and Data Science student passionate about building intelligent systems and modern web applications. I enjoy solving real-world problems using machine learning, computer vision, and full-stack development.
               </p>
@@ -64,7 +64,7 @@ export default function About() {
               </div>
             </div>
 
-            <p className="text-gray-400 italic">
+            <p className="pt-sans text-gray-400 italic">
               I constantly explore new technologies and build innovative projects to improve my technical skills.
             </p>
           </motion.div>
@@ -82,29 +82,29 @@ export default function About() {
                   <GraduationCap className="w-8 h-8 text-cyan-400" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-white mb-1">
+                  <h3 className="pt-sans text-xl font-semibold text-white mb-1">
                     B.Tech Artificial Intelligence and Data Science
                   </h3>
-                  <p className="text-cyan-400 font-medium">St. Joseph's Institute of Technology</p>
-                  <p className="text-gray-400 text-sm mt-2">2022 – 2026</p>
+                  <p className="pt-sans text-cyan-400 font-medium">St. Joseph's Institute of Technology</p>
+                  <p className="pt-sans text-gray-400 text-sm mt-2">2022 – 2026</p>
                 </div>
               </div>
               <div className="flex items-center justify-between bg-black/20 rounded-lg p-4 mt-4">
-                <span className="text-gray-300">CGPA</span>
-                <span className="text-2xl font-bold text-cyan-400">8.2</span>
+                <span className="pt-sans text-gray-300">CGPA</span>
+                <span className="pt-sans text-2xl font-bold text-cyan-400">8.2</span>
               </div>
             </div>
 
             <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300">
-              <h4 className="font-semibold text-white mb-2">12th Grade</h4>
-              <p className="text-gray-400 text-sm">David Matric Higher Secondary School</p>
-              <p className="text-cyan-400 font-semibold mt-2">90%</p>
+              <h4 className="pt-sans font-semibold text-white mb-2">12th Grade</h4>
+              <p className="pt-sans text-gray-400 text-sm">David Matric Higher Secondary School</p>
+              <p className="pt-sans text-cyan-400 font-semibold mt-2">90%</p>
             </div>
 
             <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300">
-              <h4 className="font-semibold text-white mb-2">10th Grade</h4>
-              <p className="text-gray-400 text-sm">David Matric Higher Secondary School</p>
-              <p className="text-cyan-400 font-semibold mt-2">71%</p>
+              <h4 className="pt-sans font-semibold text-white mb-2">10th Grade</h4>
+              <p className="pt-sans text-gray-400 text-sm">David Matric Higher Secondary School</p>
+              <p className="pt-sans text-cyan-400 font-semibold mt-2">71%</p>
             </div>
           </motion.div>
         </div>

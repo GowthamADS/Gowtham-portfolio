@@ -40,25 +40,27 @@ export default function Projects() {
       buttonText: "In Progress",
 
       //link: "https://github.com/yourusername/smart-helmet",
+
     },
 
     {
-      title: "Autonomous Drone for Disaster Rescue",
+      title: "QuickTube – YouTube Video Summarizer",
 
       description:
-        "Development of an autonomous drone with thermal imaging and advanced segmentation techniques for detecting humans during natural disasters.",
+            "AI-powered YouTube video summarizer that extracts transcripts and generates concise summaries using NLP techniques.",
 
-      tags: ["Computer Vision", "Thermal Imaging", "AI", "Rescue"],
+      tags: ["Python", "Flask", "NLP", "YouTube API", "AI"],
 
       gradient: "from-blue-500/20 to-purple-500/20",
 
       borderColor: "border-blue-400/30",
 
-      status: "In Progress",
+      status: "Completed",
 
-      buttonText: "In Progress",
+      buttonText: "View Project",
 
-     // link: "https://yourdroneproject.com",
+      link: "https://quicktube-ai.netlify.app/",
+
     },
 
     {
@@ -78,6 +80,7 @@ export default function Projects() {
       buttonText: "In Progress",
 
       // link: "https://drive.google.com/yourpaper",
+
     },
 
     {
@@ -117,17 +120,17 @@ export default function Projects() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-11 mt-5"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="federo text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Featured Projects
           </h2>
 
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
+          <div className="pt-sans w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="pt-sans grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -137,8 +140,138 @@ export default function Projects() {
                 duration: 0.6,
                 delay: index * 0.1,
               }}
-              className={`backdrop-blur-lg bg-gradient-to-br ${project.gradient} border ${project.borderColor} rounded-2xl p-8 hover:scale-105 hover:shadow-2xl transition-all duration-300 group`}
-            >
+                className={`
+                group
+                relative
+                overflow-hidden
+                backdrop-blur-lg
+                bg-gradient-to-br
+                ${project.gradient}
+                border
+                ${project.borderColor}
+                rounded-2xl
+                p-8
+                hover:scale-[1.03]
+                hover:shadow-[0_0_40px_rgba(34,211,238,0.25)]
+                transition-all
+                duration-500
+                `}   >
+
+              {/* Dynamic AI Circuit Background */}
+            <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none">
+
+              {/* Horizontal Circuits */}
+              {[15, 40, 70].map((top, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute left-0 w-full h-[1px] bg-cyan-400/15"
+                  style={{ top: `${top}%` }}
+                  animate={{
+                    opacity: [0.1, 0.5, 0.1],
+                  }}
+                  transition={{
+                    duration: 2 + i,
+                    repeat: Infinity,
+                  }}
+                />
+              ))}
+
+              {/* Vertical Circuits */}
+              {[20, 55, 80].map((left, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute top-0 h-full w-[1px] bg-cyan-400/15"
+                  style={{ left: `${left}%` }}
+                  animate={{
+                    opacity: [0.2, 0.6, 0.2],
+                  }}
+                  transition={{
+                    duration: 3 + i,
+                    repeat: Infinity,
+                  }}
+                />
+              ))}
+
+              {/* Moving Data Packets */}
+              {[0, 1, 2].map((item) => (
+                <motion.div
+                  key={item}
+                  className="
+                    absolute
+                    top-[20%]
+                    w-16
+                    h-[2px]
+                    bg-gradient-to-r
+                    from-transparent
+                    via-cyan-400
+                    to-transparent
+                  "
+                  animate={{
+                    x: [-100, 700],
+                  }}
+                  transition={{
+                    duration: 2 + item,
+                    repeat: Infinity,
+                    ease: "linear",
+                    delay: item * 0.8,
+                  }}
+                />
+              ))}
+
+              {/* AI Nodes */}
+              {[
+                { top: "20%", left: "20%" },
+                { top: "40%", left: "60%" },
+                { top: "75%", left: "45%" },
+                { top: "60%", left: "80%" },
+                { top: "15%", left: "75%" },
+              ].map((node, i) => (
+                <motion.div
+                  key={i}
+                  className="
+                    absolute
+                    w-1
+                    h-1
+                    rounded-full
+                    bg-blue-300
+                    shadow-[0_0_12px_#22d3ee]
+                  "
+                  style={node}
+                  animate={{
+                    scale: [1, 2, 1],
+                    opacity: [0.5, 1, 0.5],
+                  }}
+                  transition={{
+                    duration: 2 + i * 0.5,
+                    repeat: Infinity,
+                  }}
+                />
+              ))}
+
+              {/* Scanner Sweep */}
+              <motion.div
+                className="
+                  absolute
+                  inset-y-0
+                  w-20
+                  bg-gradient-to-r
+                  from-transparent
+                  via-cyan-400/10
+                  to-transparent
+                  blur-md
+                "
+                animate={{
+                  x: [-100, 700],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              />
+
+            </div>
+                  
               {/* Top Section */}
               <div className="flex items-start justify-between mb-4">
                 <div className="p-3 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors">

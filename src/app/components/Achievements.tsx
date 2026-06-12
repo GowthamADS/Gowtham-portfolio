@@ -10,23 +10,23 @@ export default function Achievements() {
   const achievements = [
     {
       icon: Trophy,
-      title: "Winner – Shark Tank Technical Event",
+      title: "Winner – Shark Tank Technical Event, SRM",
       event: "AI-ZYPHER'24",
-      description: "First place winner in the prestigious technical competition",
+      description: "Secured First Place by presenting the Smart Helmet, an IoT-based road safety solution designed to enhance rider safety through intelligent monitoring and emergency response features.",
       color: "from-yellow-400 to-orange-400",
     },
     {
       icon: Award,
-      title: "Hackathon Project Presentation",
-      event: "Participant",
-      description: "Successfully presented innovative project solutions",
+      title: "Runner - BLAZE A TRAIL 1.0, SJIT",
+      event: "Hackothan",
+      description: "Developed an innovative project solution and earned Runner-Up position along with an Internship Offer Letter.",
       color: "from-cyan-400 to-blue-400",
     },
     {
       icon: Star,
-      title: "Hackathon Paper Presentation",
+      title: "Finalist - HackIT 3.0, VIT",
       event: "Participant",
-      description: "Presented research findings and technical papers",
+      description: "Reached the Finalist round by developing and presenting a technology-driven solution to real-world problems.",
       color: "from-purple-400 to-pink-400",
     },
   ];
@@ -40,15 +40,15 @@ export default function Achievements() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-11 mt-5"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="federo text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Achievements & Awards
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="pt-sans grid md:grid-cols-3 gap-8">
           {achievements.map((achievement, index) => (
             <motion.div
               key={achievement.title}

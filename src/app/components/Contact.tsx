@@ -22,7 +22,7 @@ export default function Contact() {
       icon: Mail,
       label: "Email",
       value: "gowthamads1216@gmail.com",
-      href: "mailto:gowthamads1216@gmail.com",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=gowthamads1216@gmail.com",
       color: "from-cyan-400 to-blue-400",
     },
     {
@@ -82,22 +82,78 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 px-4 relative overflow-hidden">
 
+      {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-900/10 to-transparent" />
 
+      {/* Globe Glow */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+
+        <div className="absolute w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[150px]" />
+
+        {/* Rotating Globe */}
+        <motion.div
+          className="relative w-[400px] h-[400px] rounded-full border border-cyan-400/10"
+          animate={{ rotate: 360 }}
+          transition={{
+            duration: 80,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+
+          {/* Latitude */}
+          <div className="absolute top-1/4 w-full border-t border-cyan-400/10" />
+          <div className="absolute top-1/2 w-full border-t border-cyan-400/10" />
+          <div className="absolute top-3/4 w-full border-t border-cyan-400/10" />
+
+          {/* Longitude */}
+          <div className="absolute left-1/4 h-full border-l border-cyan-400/10" />
+          <div className="absolute left-1/2 h-full border-l border-cyan-400/10" />
+          <div className="absolute left-3/4 h-full border-l border-cyan-400/10" />
+
+        </motion.div>
+
+
+        {/* Floating Nodes */}
+        {[
+          { top: "20%", right: "10%" },
+          { top: "25%", left: "10%" },
+          { top: "60%", left: "30%" },
+          { top: "85%", left: "5%" },
+          { top: "85%", right: "1%" },
+        ].map((node, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-3 h-3 rounded-full bg-cyan-400"
+            style={node}
+            animate={{
+              scale: [1, 1, 1],
+              opacity: [0.3, 1, 0.3],
+            }}
+            transition={{
+              duration: 3 + i,
+              repeat: Infinity,
+            }}
+          />
+        ))}
+
+      </div>
+
       <div className="max-w-6xl mx-auto relative z-10" ref={ref}>
+
 
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-11 mt-5"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="federo text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Get In Touch
           </h2>
 
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
+          <div className="pt-sans w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -112,11 +168,11 @@ export default function Contact() {
 
             <div>
 
-              <h3 className="text-2xl font-bold text-white mb-6">
+              <h3 className="pt-sans text-2xl font-bold text-white mb-6">
                 Let's Connect
               </h3>
 
-              <p className="text-gray-400 mb-8">
+              <p className="pt-sans text-gray-400 mb-8">
                 Feel free to reach out for collaborations, opportunities, or just a friendly chat about tech!
               </p>
 
@@ -153,7 +209,7 @@ export default function Contact() {
 
             <div>
 
-              <h4 className="text-lg font-semibold text-white mb-4">
+              <h4 className="pt-sans text-lg font-semibold text-white mb-4">
                 Connect on Social Media
               </h4>
 
@@ -197,7 +253,7 @@ export default function Contact() {
 
               <div>
 
-                <label className="block text-gray-300 mb-2">Name</label>
+                <label className="pt-sans  block text-gray-300 mb-2">Name</label>
 
                 <input
                   type="text"
@@ -214,7 +270,7 @@ export default function Contact() {
 
               <div>
 
-                <label className="block text-gray-300 mb-2">Email</label>
+                <label className="pt-sans block text-gray-300 mb-2">Email</label>
 
                 <input
                   type="email"
@@ -231,10 +287,10 @@ export default function Contact() {
 
               <div>
 
-                <label className="block text-gray-300 mb-2">Message</label>
+                <label className="pt-sans block text-gray-300 mb-2">Message</label>
 
                 <textarea
-                  rows={5}
+                  rows={3.5}
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
@@ -256,7 +312,7 @@ export default function Contact() {
                 className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg font-semibold flex items-center justify-center gap-2 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(34,211,238,0.7)]"
               >
 
-                <motion.span
+                <motion.span className="pt-sans relative z-10"
                   initial={{ x: 0 }}
                   whileHover={{ x: -4 }}
                 >

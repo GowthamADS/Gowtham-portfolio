@@ -9,16 +9,28 @@ export default function Certifications() {
 
   const certifications = [
     {
-      title: "React Bootcamp",
-      provider: "LetsUpgrade",
-      description: "Comprehensive training in React fundamentals and advanced concepts",
-      color: "from-cyan-400 to-blue-400",
+      title: "Robotics & Intelligent Automation",
+      provider: "Zuntra Digital",
+      description: "Completed hands-on training in Robotics and Intelligent Automation, focusing on automation workflows, problem-solving, and modern industry technologies.",
+      color: "from-blue-300 to-green-500",
     },
     {
       title: "Google Developer Student Clubs",
       provider: "Google Workspace",
       description: "Participated in Google Developer Student Clubs technical programs.",
-      color: "from-blue-400 to-purple-400",
+      color: "from-blue-300 to-purple-400",
+    },
+    {
+      title: "AWS Certified Developer",
+      provider: "Infosys Springboard",
+      description: "Earned AWS Developer certification, covering cloud application development, deployment, serverless computing, and AWS core services.",
+      color: "from-blue-500 to-green-300",
+    },
+    {
+      title: "IEEE Publication",
+      provider: "ICRAME 2026",
+      description: "Presented research on a ' CNN-based plant disease detection system ', demonstrating the application of deep learning for accurate agricultural disease classification.",
+      color: "from-cyan-400 to-blue-400",
     },
   ];
 
@@ -31,15 +43,15 @@ export default function Certifications() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-11 mt-5"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="federo text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Certifications
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
+          <div className="pt-sans w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="pt-sans grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {certifications.map((cert, index) => (
             <motion.div
               key={cert.title}

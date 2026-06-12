@@ -26,7 +26,6 @@ export default function Skills() {
         { name: "HTML", level: 75 },
         { name: "CSS", level: 80 },
         { name: "React", level: 70 },
-        { name: "Bootstrap", level: 75 },
       ],
     },
     {
@@ -56,14 +55,14 @@ export default function Skills() {
     <section id="skills" className="py-20 px-4 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/10 to-transparent" />
 
-      <div className="max-w-6xl mx-auto relative z-10" ref={ref}>
+      <div className="pt-sans max-w-6xl mx-auto relative z-10" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-11 mt-5"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="federo text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Skills & Expertise
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto rounded-full" />
